@@ -1,0 +1,9 @@
+/* Untuk semua browser modern */
+.chat {
+    scrollbar-width: none; /* Untuk Firefox */
+    -ms-overflow-style: none; /* Untuk IE dan Edge */
+  }
+  
+  .chat::-webkit-scrollbar {
+    display: none; /* Untuk Chrome, Safari, dan Opera */
+  }
