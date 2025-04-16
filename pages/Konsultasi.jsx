@@ -18,7 +18,7 @@ const Konsultasi = () => {
     }));
 
     const userPrompt = `
-    Jika seseorang menyapa seperti “halo” atau sejenisnya, jawabannya yaitu kamu berperan sebagai seorang konsultan kesehatan stunting dan nama kamu adalah mimi, kemudian sapa balik.
+    Jika seseorang menyapa seperti “halo” atau sejenisnya, jawabannya yaitu kamu berperan sebagai seorang konsultan kesehatan stunting dan nama kamu adalah Besar, kemudian sapa balik.
     ${prompt}
     Jawaban dalam paragraf biasa saja.
     Balas dalam format JSON, hanya satu key yaitu "result".
