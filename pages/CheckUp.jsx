@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {FaArrowLeft} from 'react-icons/fa'
 import balita1 from '../src/assets/bayi2.jpeg'
 import balita2 from '../src/assets/balita2.png'
 import balita3 from '../src/assets/balita3.jpg'
+import Cookies from "js-cookie";
+import { getUser } from '../src/api/users'
+import { addHistory } from '../src/api/history'
 
 const questions = [
   {
@@ -59,6 +62,9 @@ const questions = [
 ];
 
 const CheckUp = () => {
+  const [user, setUser] = useState(null);
+  const user_id = Cookies.get("user_id");
+
   const [step, setStep] = useState(1);
   const [jenisKelamin, setJenisKelamin] = useState("")
   const [tanggalLahir, setTanggalLahir] = useState("")
@@ -67,7 +73,16 @@ const CheckUp = () => {
 
   const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
+  const [history, setHistory] = useState([]);
   const [error, setError] = useState('');
+
+    useEffect(() => {
+      const getDataUser = async () => {
+        const response = await getUser(user_id);
+        setUser(response);
+      }
+      getDataUser();
+    }, [user_id]);
 
   const handleOptionChange = (questionId, option) => {
     setAnswers({
@@ -88,18 +103,6 @@ const CheckUp = () => {
     });
     return totalScore;
   };
-
-  // const getResultText = (score) => {
-  //   if (score >= 26 && score <= 30) {
-  //     return 'Rendah risiko stunting (Anak dalam kondisi baik, terus dipantau dan dijaga)';
-  //   } else if (score >= 20 && score <= 25) {
-  //     return 'Risiko sedang (Perlu perhatian lebih terhadap gizi, kebersihan, dan pemantauan pertumbuhan)';
-  //   } else if (score >= 10 && score <= 19) {
-  //     return 'Risiko tinggi (Segera konsultasi ke tenaga kesehatan untuk intervensi)';
-  //   } else {
-  //     return 'Mohon lengkapi semua pertanyaan untuk mendapatkan hasil.';
-  //   }
-  // };
 
   const getResultText = (score) => {
     if (score >= 26 && score <= 30) {
@@ -135,7 +138,7 @@ const CheckUp = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (Object.keys(answers).length !== questions.length) {
       alert('Semua pertanyaan harus dijawab sebelum mengirim!');
@@ -144,6 +147,30 @@ const CheckUp = () => {
     }
     const totalScore = calculateScore();
     const resultText = getResultText(totalScore);
+    const historyData = questions.map((q) => ({
+      questionId: q.id,
+      questionText: q.text,
+      answer: answers[q.id],
+    }));
+
+    const result = { score: totalScore, title: resultText.title, description: resultText.description, advice: resultText.advice, education: resultText.education }
+
+    const history = { 
+      totalScore: result.score,
+      title: result.title,
+      history: historyData, 
+      result 
+    };
+
+    const data = {
+      username: user.username,
+      history
+    }
+
+    const response = await addHistory(data);
+    console.log(response);
+
+    setHistory(historyData);
     setResult({ img: resultText.img, score: totalScore, title: resultText.title, description: resultText.description, advice: resultText.advice, education: resultText.education });
     setStep(3);
   };
@@ -179,6 +206,7 @@ const CheckUp = () => {
             <option value="Laki-laki">Laki-laki</option>
             <option value="Perempuan">Perempuan</option>
           </select>
+          <p className='text-sm'>Tanggal lahir</p>
           <input type="date" value={tanggalLahir} placeholder='Tanggal lahir' onChange={(e) => setTanggalLahir(e.target.value)} className='rounded-full p-2 px-4 outline-none border my-2' />
           <input type="number" value={tinggi} placeholder='Tinggi saat ini' onChange={(e) => setTinggi(e.target.value)} className='rounded-full p-2 px-4 outline-none border my-2' />
           <input type="number" value={berat} placeholder='Berat saat ini' onChange={(e) => setBerat(e.target.value)} className='rounded-full p-2 px-4 outline-none border my-2' />

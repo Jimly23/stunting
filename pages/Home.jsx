@@ -8,6 +8,7 @@ import icPencegahan from '../src/assets/icPencegahan.png'
 import icPengobatan from '../src/assets/icPengobatan.png'
 import icPenyebab from '../src/assets/icPenyebab.png'
 import icTentang from '../src/assets/icTentang.png'
+import icDataStatus from '../src/assets/icDataStatus.png'
 import background from '../src/assets/background.png'
 import Cookies from "js-cookie";
 import { getUser } from '../src/api/users';
@@ -93,6 +94,14 @@ const Home = () => {
             <div className='flex flex-col items-center justify-center'>
               <div className='bg-[#ffde59] rounded-full w-[80px] h-[80px] flex items-center justify-center'>
                 <img src={icCekStatus} className='w-[80%]' alt="" />
+              </div>
+              <p className='text-sm text-center mt-2 font-medium'>Cek Status Anak</p>
+            </div>
+          </Link>
+          <Link to={'/data-status'}>
+            <div className='flex flex-col items-center justify-center'>
+              <div className='bg-[#00bf63] rounded-full w-[80px] h-[80px] flex items-center justify-center'>
+                <img src={icDataStatus} className='w-[80%]' alt="" />
               </div>
               <p className='text-sm text-center mt-2 font-medium'>Cek Status Anak</p>
             </div>

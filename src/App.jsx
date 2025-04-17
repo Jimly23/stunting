@@ -13,6 +13,8 @@ import CiriStunting from "../pages/CiriStunting"
 import CheckUp from "../pages/CheckUp"
 import Profile from "../pages/Profile"
 import Splash from "../pages/Splash"
+import DataStatus from "../pages/DataStatus"
+import DetailHistory from "../pages/DetailHistory"
 function App() {
 
   return (
@@ -34,6 +36,8 @@ function App() {
           <Route path="/penyebab" element={<PenyebabStunting />} />
           <Route path="/tentang" element={<TentangStunting />} />
           <Route path="/checkup" element={<CheckUp />} />
+          <Route path="/data-status" element={<DataStatus />} />
+          <Route path="/detail-history" element={<DetailHistory />} />
           <Route path="/check-email" element={<CheckEmail />} />
           <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
