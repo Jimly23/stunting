@@ -168,7 +168,6 @@ const CheckUp = () => {
     }
 
     const response = await addHistory(data);
-    console.log(response);
 
     setHistory(historyData);
     setResult({ img: resultText.img, score: totalScore, title: resultText.title, description: resultText.description, advice: resultText.advice, education: resultText.education });
