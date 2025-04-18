@@ -103,7 +103,7 @@ const Home = () => {
               <div className='bg-[#00bf63] rounded-full w-[80px] h-[80px] flex items-center justify-center'>
                 <img src={icDataStatus} className='w-[80%]' alt="" />
               </div>
-              <p className='text-sm text-center mt-2 font-medium'>Cek Status Anak</p>
+              <p className='text-sm text-center mt-2 font-medium'>Data Anak</p>
             </div>
           </Link>
         </div>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {FaArrowLeft} from 'react-icons/fa'
+import penyebabStunting from '../src/assets/penyebabStunting.jpg';
+
 
 const PenyebabStunting = () => {
   return (
@@ -13,9 +15,9 @@ const PenyebabStunting = () => {
       </div>
       <div className='p-2 pt-5 text-justify'>
         <h1 className='font-medium text-lg mb-4'>Apa Penyebab dari Stunting?</h1>
-        {/* <div className='w-full h-[200px] border rounded-lg mb-5'>
-          <img src="" alt="" />
-        </div> */}
+        <div className='w-full h-[200px] border rounded-lg mb-5'>
+          <img src={penyebabStunting} className='w-full h-full object-cover' />
+        </div>
         <p className='mb-2'><span className='me-5'></span>Berdasarkan BAPPENAS (2013), stunting pada anak diakibatkan oleh berbagai faktor, meliputi dari aspek langsung maupun tidak langsung. Faktor-faktor yang menyebabkan stunting adalah :</p>
         <div className='mb-3'>
           <p className='font-medium'>1. Asupan Nutrisi Bayi</p>

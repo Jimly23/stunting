@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {FaArrowLeft} from 'react-icons/fa'
+import pencegahanStunting from '../src/assets/pencegahanStunting.jpg';
+
 
 const Pencegahan = () => {
   return (
@@ -13,9 +15,9 @@ const Pencegahan = () => {
       </div>
       <div className='p-2 pt-5 text-justify'>
         <h1 className='font-medium text-lg mb-4'>Bagaimana Pencegahan Stunting?</h1>
-        {/* <div className='w-full h-[200px] border rounded-lg mb-5'>
-          <img src="" alt="" />
-        </div> */}
+        <div className='w-full h-[200px] border rounded-lg mb-5'>
+          <img src={pencegahanStunting} className='w-full h-full object-cover' />
+        </div>
         <p className='mb-5'><span className='me-5'></span>Pengurangan konsumsi makanan tertentu yang dapat meningkatkan risiko stunting perlu dilakukan. Solusi tersebut juga mengutamakan Pelaksanaan kebijakan yang tegas dan terbukti efektif untuk menangani akses terhadap makanan bergizi serta surplus makanan dan minuman olahan yang berlemak tidak sehat, gula tambahan, dan/atau garam, mencakup kebijakan fiskal, regulasi pemasaran yang berbahaya, dukungan serta promosi menyusui, serta pelabelan nutrisi pada kemasan makanan (WHO, 2023).Tes kesehatan atau pemeriksaan kesehatan sebelum kehamilan memiliki peran penting dalam mencegah stunting. Fase pra-kehamilan, yang dikenal sebagai periode pra-konsepsi, berkaitan dengan wanita dewasa atau subur yang bersiap untuk jadi ibu. </p>
         <p className='mb-5'><span className='me-5'></span>Pada fase krusial ini, kebutuhan gizi bervariasi secara signifikan. Oleh sebab itu, sangat penting untuk melakukan pemeriksaan kesehatan tidak hanya sebelum pernikahan, tetapi juga sesudah menikah, terutama penilaian keadaan gizi. Kesalahan  dalam menangani status gizi buruk dapat mengakibatkan kelahiran bayi dengan berat badan di bawah normal, yang meningkatkan kemungkinan terjadinya stunting. Ibu hamil yang mengalami kekurangan energi kronis (KEK) atau anemia selama kehamilan memiliki risiko lebih tinggi untuk melahirkan bayi dengan berat badan rendah(BBLR).BBLR secara konsisten dihubungkan dengan terhambatnya laju pertumbuhan atau penurunan tinggi badan. Oleh karena itu, sangat penting untuk secara aktif menangani isu ini dengan menerapkan atau memperbaiki kebijakan yang memprioritaskan peningkatan intervensi gizi dan pelayanan kesehatan ibu, dengan perhatian khusus pada periode remaja awal (WHO, 2014).adapun beberapa cara pencegahan stunting menurut Trimuliana (2020) :</p>
         <div className='mb-3'>
