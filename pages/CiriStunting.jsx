@@ -2,18 +2,22 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {FaArrowLeft} from 'react-icons/fa'
 import ciriStunting from '../src/assets/ciriStunting.jpg';
+import bgartikel6 from '../src/assets/bgartikel6.png';
 
 
 const CiriStunting = () => {
   return (
-    <div className='max-w-md mx-auto bg-white min-h-screen text-slate-900 pb-12 '>
+    <div className='max-w-md mx-auto bg-transparent min-h-screen text-slate-900 pb-12 '>
       <div className='relative flex items-center text-white font-medium justify-center bg-[#5de0e6] py-3'>
         <Link to={'/home'}>
           <p className='absolute left-0 top-3.5 left-5'><FaArrowLeft size={20}/></p>
         </Link>
         <h5>Ciri Stunting</h5>
       </div>
-      <div className='p-2 pt-5 text-justify'>
+      <div className='p-2 pt-5 text-justify relative'>
+        <div className='fixed'>
+          <img src={bgartikel6} className=' w-full z-10' />
+        </div>
         <h1 className='font-medium text-lg mb-4'>Ciri-ciri Stunting, Tanda, dan Gejala</h1>
         <div className='w-full h-[200px] border rounded-lg mb-5'>
           <img src={ciriStunting} className='w-full h-full object-cover' />

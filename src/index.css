@@ -7,3 +7,8 @@
   .chat::-webkit-scrollbar {
     display: none; /* Untuk Chrome, Safari, dan Opera */
   }
+
+  /* index.css */
+body {
+  font-family: 'Poppins', sans-serif;
+}

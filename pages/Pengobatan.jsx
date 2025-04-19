@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import {FaArrowLeft} from 'react-icons/fa'
+import { FaArrowLeft } from 'react-icons/fa'
 import pengobatanStunting from '../src/assets/pengobatanStunting.jpg';
+import bgartikel7 from '../src/assets/bgartikel7.png';
+
 
 
 const Pengobatan = () => {
@@ -9,11 +11,14 @@ const Pengobatan = () => {
     <div className='max-w-md mx-auto bg-white min-h-screen text-slate-900 pb-12 '>
       <div className='relative flex items-center text-white font-medium justify-center bg-[#5de0e6] py-3'>
         <Link to={'/home'}>
-          <p className='absolute left-0 top-3.5 left-5'><FaArrowLeft size={20}/></p>
+          <p className='absolute left-0 top-3.5 left-5'><FaArrowLeft size={20} /></p>
         </Link>
         <h5>Pengobatan Stunting</h5>
       </div>
-      <div className='p-2 pt-5 text-justify'>
+      <div className='p-2 pt-5 text-justify relative'>
+        <div className='fixed'>
+          <img src={bgartikel7} className=' w-full z-10' />
+        </div>
         <h1 className='font-medium text-lg mb-4'>Bagaimana Pengobatan Stunting?</h1>
         <div className='w-full h-[200px] border rounded-lg mb-5'>
           <img src={pengobatanStunting} className='w-full h-full object-cover' />

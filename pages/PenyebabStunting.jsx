@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {FaArrowLeft} from 'react-icons/fa'
 import penyebabStunting from '../src/assets/penyebabStunting.jpg';
+import bgartikel1 from '../src/assets/bgartikel1.png';
 
 
 const PenyebabStunting = () => {
@@ -13,7 +14,10 @@ const PenyebabStunting = () => {
         </Link>
         <h5>Penyebab Stunting</h5>
       </div>
-      <div className='p-2 pt-5 text-justify'>
+      <div className='p-2 pt-5 text-justify relative'>
+        <div className='fixed'>
+          <img src={bgartikel1} className=' w-full z-10' />
+        </div>
         <h1 className='font-medium text-lg mb-4'>Apa Penyebab dari Stunting?</h1>
         <div className='w-full h-[200px] border rounded-lg mb-5'>
           <img src={penyebabStunting} className='w-full h-full object-cover' />
